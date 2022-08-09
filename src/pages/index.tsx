@@ -22,9 +22,9 @@ export default function Home() {
 
   const voteForRoundest = (selected: number) => {
     if (selected === first) {
-      voteMutation.mutate({ votedFor: first, votedAgainst: second });
+      voteMutation.mutate({ votedForId: first, votedAgainstId: second });
     } else {
-      voteMutation.mutate({ votedFor: second, votedAgainst: first });
+      voteMutation.mutate({ votedForId: second, votedAgainstId: first });
     }
 
     setIds(getOptionsForVote());
