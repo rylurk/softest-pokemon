@@ -12,6 +12,7 @@ const doBackfill = async () => {
     spriteUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`,
   }));
 
+  // @ts-ignore
   const creation = await prisma.pokemon.createMany({
     data: formattedPokemon,
   });
