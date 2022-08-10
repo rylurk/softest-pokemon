@@ -39,7 +39,7 @@ const PokemonListing = (props: { pokemon: PokemonQueryResult[number] }) => {
         <Image src={props.pokemon.spriteUrl} width={64} height={64} layout="fixed" />
         <div className="capitalize">{props.pokemon.name}</div>
       </div>
-      <div className="pr-4">{generateCountPercent(props.pokemon) + '%'}</div>
+      <div className="pr-4">{generateCountPercent(props.pokemon).toFixed(2) + '%'}</div>
     </div>
   );
 };
