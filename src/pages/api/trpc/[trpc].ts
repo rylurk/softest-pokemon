@@ -11,3 +11,7 @@ export default trpcNext.createNextApiHandler({
 export type inferQueryResponse<TRouteKey extends keyof AppRouter['_def']['queries']> = inferProcedureOutput<
   AppRouter['_def']['queries'][TRouteKey]
 >;
+
+export type AsyncReturnType<T extends (...args: any) => Promise<any>> = T extends (...args: any) => Promise<infer R>
+  ? R
+  : any;
