@@ -2,9 +2,17 @@ import '../globals.css';
 import type { AppProps } from 'next/app';
 import { withTRPC } from '@trpc/next';
 import { AppRouter } from '../backend/router';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Head>
+        <title>Softest Pokémon</title>
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 function getBaseUrl() {
