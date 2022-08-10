@@ -49,9 +49,11 @@ export default function ResultsPage(props: { pokemon: PokemonQueryResult }) {
     <div className="flex flex-col items-center">
       <h2 className="text-2xl p-4">Results</h2>
       <div className="flex flex-col w-full max-w-2xl border">
-        {props.pokemon.map((p, index) => {
-          return <PokemonListing pokemon={p} key={index} />;
-        })}
+        {props.pokemon
+          .sort((a, b) => generateCountPercent(b) - generateCountPercent(a))
+          .map((p, index) => {
+            return <PokemonListing pokemon={p} key={index} />;
+          })}
       </div>
     </div>
   );
