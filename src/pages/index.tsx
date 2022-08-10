@@ -31,21 +31,22 @@ export default function Home() {
     setIds(getOptionsForVote());
   };
 
+  const dataLoaded = !firstPokemon.isLoading && firstPokemon.data && !secondPokemon.isLoading && secondPokemon.data;
+
   return (
-    <div className="h-screen w-screen flex flex-col justify-center items-center">
-      <div className="text-2xl text-center">
+    <div className="h-screen w-screen flex flex-col justify-between items-center">
+      <div className="text-2xl text-center py-20">
         Which <span className="text-red-400">Pokémon</span> is softer?
       </div>
-      <div className="pt-8 pb-20 flex justify-between max-w-2xl items-center">
-        {!firstPokemon.isLoading && firstPokemon.data && !secondPokemon.isLoading && secondPokemon.data && (
+      {dataLoaded && (
+        <div className="flex justify-between max-w-2xl items-center">
           <PokemonListing pokemon={firstPokemon.data} vote={() => voteForRoundest(first)} />
-        )}
-        <div className="p-8">Vs</div>
-        {!firstPokemon.isLoading && firstPokemon.data && !secondPokemon.isLoading && secondPokemon.data && (
+          <div className="p-8">Vs</div>
           <PokemonListing pokemon={secondPokemon.data} vote={() => voteForRoundest(second)} />
-        )}
-      </div>
-      <div className="w-full text-xl text-center">
+        </div>
+      )}
+      {!dataLoaded && <img className="w-48" src="rings.svg" />}
+      <div className="w-full text-xl text-center py-20">
         <Link href="/results">Results</Link>
       </div>
     </div>
