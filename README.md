@@ -12,6 +12,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## About
 
-This is a fun project built with the T3 stack (TypeScript, Tailwind, tRPC + Next.js and Prisma). The backend is a Planetscale MySQL database and the app is deployed on Vercel.
+This is a fun project [https://www.youtube.com/watch?v=PKy2lYEnhgs](built) with the [https://dev.to/nexxeln/t3-stack-and-my-most-popular-open-source-project-ever-5c31](T3 stack) (TypeScript, Tailwind, tRPC + Next.js and Prisma). The backend is a Planetscale MySQL database and the app is deployed on Vercel.
 
 It seeks to (democratically) answer the question: what is the softest pokémon?
